@@ -1,2 +1,2 @@
 # BotaRun
-Botani Run development
+2D Platformer Botani Run game development
