@@ -27,6 +27,7 @@ Clear all the quest and help [Char Name] to the finish spot in time. But be care
 Community asset that we used to make and create this project:
 * [Blackspire Medieval Pixel Art Asset](https://assetstore.unity.com/packages/2d/environments/medieval-pixel-art-asset-free-130131 "Medieval Pixel Art")
 * [Cainos Village Props](https://assetstore.unity.com/packages/2d/environments/pixel-art-platformer-village-props-166114 "Village Props")
+* [Jesse Munguia Jungle Pack](https://jesse-m.itch.io/jungle-pack "Jungle Pack")
 
 Dont forget to checkout the Asset Creator, they are awesome!
 
