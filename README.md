@@ -17,16 +17,16 @@ Clear all the quest and help [Char Name] to the finish spot in time. But be care
 
 ## How to play
 
-**Movement**    : Press A/D for move player into horizontal axis and W/S to climb up the stairs and crouch
-**Interact**    : Press [key] for interact with object to clear the level
-**Jump**        : Press Space for make the character jump
-**Skip Chat**   : Click left mouse to skip the dialogue
-**Main Menu**   : Press ESC to open main menu
+**Movement**    : Press A/D for move player into horizontal axis and W/S to climb up the stairs and crouch<br>
+**Interact**    : Press [key] for interact with object to clear the level<br>
+**Jump**        : Press Space for make the character jump<br>
+**Skip Chat**   : Click left mouse to skip the dialogue<br>
+**Main Menu**   : Press ESC to open main menu<br>
 
 ## Assets
-Community asset that we used to make and create this project :
-*[Blackspire Medieval Pixel Art Asset](https://assetstore.unity.com/packages/2d/environments/medieval-pixel-art-asset-free-130131 "Medieval Pixel Art")
-*[Cainos Village Props](https://assetstore.unity.com/packages/2d/environments/pixel-art-platformer-village-props-166114 "Village Props")
+Community asset that we used to make and create this project:
+* [Blackspire Medieval Pixel Art Asset](https://assetstore.unity.com/packages/2d/environments/medieval-pixel-art-asset-free-130131 "Medieval Pixel Art")
+* [Cainos Village Props](https://assetstore.unity.com/packages/2d/environments/pixel-art-platformer-village-props-166114 "Village Props")
 
 Dont forget to checkout the Asset Creator, they are awesome!
 
