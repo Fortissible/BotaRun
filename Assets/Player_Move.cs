@@ -5,8 +5,9 @@ using UnityEngine;
 public class Player_Move : MonoBehaviour
 {
     public CharacterController2D controller;
-    public float runSpeed = 120f;
-    public bool jump_bool = false;
+    public float runSpeed = 100f;
+    bool jump_bool = false;
+    bool crouch = false;
     float horizontalMovement = 0f;
     // Start is called before the first frame update
     void Start()
@@ -22,11 +23,18 @@ public class Player_Move : MonoBehaviour
         {
             jump_bool = true;
         }
+        if (Input.GetButtonDown("Crouch"))
+        {
+            crouch = true;
+        } else if (Input.GetButtonUp("Crouch"))
+        {
+            crouch = false;
+        }
     }
 
     void FixedUpdate()
     {
-        controller.Move(horizontalMovement * Time.fixedDeltaTime ,false,jump_bool);
+        controller.Move(horizontalMovement * Time.fixedDeltaTime , crouch, jump_bool);
         jump_bool = false;
     }
 }
