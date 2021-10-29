@@ -5,8 +5,8 @@
 Welcome to IPB University, [Char Name] are the Computer Science major student in there. He's kinda sleepyhead and careless person, Because of that he really often late on all activities. However, He really care about the enviroment arround him. Help [Char Name] for taking care of enviroment around him and help him so that he doesn't late for his activities.
 
 ## Rules
-- You need to reach the goals before the time ran out.
-- Goals wouldn't be unlocked unless you do all tasks on that floor.
+- You need to reach the finish spot before the time ran out.
+- Finish spot wouldn't be unlocked unless you do all tasks on that floor.
 - Tasks consist of interactions with game objects such as talking to NPC, planting, or feed a dog.
 - There is a global timer which keeps counting down throughout your playthrough. If the timer reaches 0, you are out of the game.
 - If you fall into a pit you die, instantly, no matter how many seconds are left on your timer.
