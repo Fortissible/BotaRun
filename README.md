@@ -23,6 +23,28 @@ Clear all the quest and help [Char Name] to the finish spot in time. But be care
 **Skip Chat**   : Click left mouse to skip the dialogue<br>
 **Main Menu**   : Press ESC to open main menu<br>
 
+## Development Progress
+### Week 1
+Week 1 Goals :
+* Create project story and goals -> Wildan, Jevon, Rian
+* First commit main project -> Wildan
+* Create basic script -> Wildan
+* Choosing template assets & create assets -> Rian
+
+### Week 2
+Week 2 Goals :
+* Create movement script and logic -> Wildan, Jevon
+* Add collision logic -> Wildan
+* Customize camera POV -> Wildan, Jevon
+* Continue creating assets -> Rian
+
+### Week 3
+Week 3 Goals :
+* Assets menus & title -> Rian
+* Assets character     -> Rian
+* Interaction script   -> Jevon
+* Dialogue system        -> Wildan
+
 ## Assets
 Community asset that we used to make and create this project:
 * [Blackspire Medieval Pixel Art Asset](https://assetstore.unity.com/packages/2d/environments/medieval-pixel-art-asset-free-130131 "Medieval Pixel Art")
