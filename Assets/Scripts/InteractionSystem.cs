@@ -10,6 +10,8 @@ public class InteractionSystem : MonoBehaviour
     public const float detectionRadius = 0.2f;
     // Detection Layer
     public LayerMask detectionLayer;
+    // Cached Trigger Object
+    public GameObject detectedObject;
 
     // Update is called once per frame
     void Update()
@@ -18,7 +20,7 @@ public class InteractionSystem : MonoBehaviour
         {
             if(InteractInput())
             {
-                Debug.Log("INTERACT");
+                detectedObject.GetComponent<Item>().Interact();                                                // Once detect an object open Item script and call Interact
             }
         }
     }
@@ -32,7 +34,17 @@ public class InteractionSystem : MonoBehaviour
     // Function to check if there's intersection between objects
     bool DetectObject()
     {
-        return Physics2D.OverlapCircle(detectionPoint.position, detectionRadius, detectionLayer);
+        Collider2D obj =  Physics2D.OverlapCircle(detectionPoint.position, detectionRadius, detectionLayer);    // Return the collider
+        if (obj == null)
+        {
+            detectedObject = null;
+            return false;
+        }
+        else
+        {
+            detectedObject = obj.gameObject;
+            return true;
+        }
     }
 
     private void OnDrawGizmos()
