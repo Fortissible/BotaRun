@@ -4,14 +4,18 @@ using UnityEngine;
 
 public class InteractionSystem : MonoBehaviour
 {
+    [Header("Detection Parameters")]
     // Detection Point
     public Transform detectionPoint;
     // Detection Radius
-    public const float detectionRadius = 0.2f;
+    public const float detectionRadius = 0.38f;
     // Detection Layer
     public LayerMask detectionLayer;
     // Cached Trigger Object
     public GameObject detectedObject;
+    [Header("Others")]
+    // List of picked items
+    public List<GameObject> pickedItems = new List<GameObject>();                       // List to store items (inventory *kinda)
 
     // Update is called once per frame
     void Update()
@@ -23,6 +27,12 @@ public class InteractionSystem : MonoBehaviour
                 detectedObject.GetComponent<Item>().Interact();                                                // Once detect an object open Item script and call Interact
             }
         }
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.green;
+        Gizmos.DrawSphere(detectionPoint.position, detectionRadius);
     }
 
     // Function to check keyboard input
@@ -47,9 +57,10 @@ public class InteractionSystem : MonoBehaviour
         }
     }
 
-    private void OnDrawGizmos()
+    // Function to pick up items
+    public void PickUpItem(GameObject item)
     {
-        Gizmos.color = Color.green;
-        Gizmos.DrawSphere(detectionPoint.position, detectionRadius);    
+        pickedItems.Add(item);
     }
+
 }
