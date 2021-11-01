@@ -1,5 +1,8 @@
 # BotaRun
-2D Platformer Botani Run game development
+<p align="center">
+  <img src="https://github.com/wildanfajri1alfarabi/BotaRun/blob/main/Assets/Title_Menu_Assets/Menu_Background_BotaRun_5.png" width="480" title="BotaRun">
+</p>
+<p align="center"><b>Botani Run</b></p>
 
 ## Story
 Welcome to IPB University, [Char Name] are the Computer Science major student in there. He's kinda sleepyhead and careless person, Because of that he really often late on all activities. However, He really care about the enviroment arround him. Help [Char Name] for taking care of enviroment around him and help him so that he doesn't late for his activities.
