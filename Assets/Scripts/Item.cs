@@ -7,6 +7,8 @@ public class Item : MonoBehaviour
 {
     public enum InteractionType { NONE, PickUp, Examine }                       // List of interaction type
     public InteractionType type;
+    [Header("Examine")]
+    public string descriptionText;
 
     public void Reset()
     {
@@ -26,11 +28,11 @@ public class Item : MonoBehaviour
                 FindObjectOfType<InteractionSystem>().PickUpItem(gameObject);   // Find object in a scene with a specific type
                 // Disable the object
                 gameObject.SetActive(false);                                    // Make game object inactive
-                Debug.Log("PICK UP");
                 break;
 
             case InteractionType.Examine:
-                Debug.Log("EXAMINE");
+                // Call the Examine item in the interaction system
+                FindObjectOfType<InteractionSystem>().ExamineItem(this);
                 break;
 
             default:

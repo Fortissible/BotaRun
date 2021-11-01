@@ -18,6 +18,12 @@ public class Player_Move : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // If player can't move don't execute code below this conditional statement
+        if (!CanMove())
+        {
+            return;
+        }
+
         horizontalMovement = Input.GetAxisRaw("Horizontal") * runSpeed;
         if (Input.GetButtonDown("Jump"))
         {
@@ -36,5 +42,16 @@ public class Player_Move : MonoBehaviour
     {
         controller.Move(horizontalMovement * Time.fixedDeltaTime , crouch, jump_bool);
         jump_bool = false;
+    }
+
+    // Function to evaluate if the player can move or not
+    bool CanMove()
+    {
+        bool can = true;
+
+        if (FindObjectOfType<InteractionSystem>().isExamining)
+            can = false;
+
+        return can;
     }
 }

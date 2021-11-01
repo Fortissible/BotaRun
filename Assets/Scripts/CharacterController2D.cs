@@ -61,6 +61,15 @@ public class CharacterController2D : MonoBehaviour
 		}
 	}
 
+	// Gizmos is graphical renderer that shows in scene for debugging purposes (detect colliding, interact, etc). 
+	// Something like gc check atas dan gc check bawah.
+	private void OnDrawGizmos()
+	{
+		Gizmos.color = Color.yellow;
+		Gizmos.DrawSphere(m_GroundCheck.position, k_GroundedRadius);
+		Gizmos.color = Color.red;
+		Gizmos.DrawSphere(m_CeilingCheck.position, k_CeilingRadius);
+	}
 
 	public void Move(float move, bool crouch, bool jump)
 	{
@@ -144,15 +153,4 @@ public class CharacterController2D : MonoBehaviour
 		theScale.x *= -1;
 		transform.localScale = theScale;
 	}
-
-
-    // Gizmos is graphical renderer that shows in scene for debugging purposes (detect colliding, interact, etc). 
-	// Something like gc check atas dan gc check bawah.
-    private void OnDrawGizmos()
-    {
-		Gizmos.color = Color.yellow;
-		Gizmos.DrawSphere(m_GroundCheck.position, k_GroundedRadius);
-		Gizmos.color = Color.red;
-		Gizmos.DrawSphere(m_CeilingCheck.position, k_CeilingRadius);
-    }
 }
