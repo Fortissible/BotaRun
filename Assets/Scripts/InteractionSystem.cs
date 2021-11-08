@@ -19,10 +19,7 @@ public class InteractionSystem : MonoBehaviour
     public GameObject examineWindow;
     public Image examineImage;
     public Text examineText;
-    public bool isExamining;
-    [Header("Others")]
-    // List of picked items
-    public List<GameObject> pickedItems = new List<GameObject>();   // List to store items (inventory *kinda)
+    public bool isExamining; 
 
     // Update is called once per frame
     void Update()
@@ -64,11 +61,7 @@ public class InteractionSystem : MonoBehaviour
         }
     }
 
-    // Function to pick up items
-    public void PickUpItem(GameObject item)
-    {
-        pickedItems.Add(item);
-    }
+
 
     public void ExamineItem(Item item)
     {

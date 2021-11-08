@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(BoxCollider2D))]                                       // RequireComponent - add component when the script is assigned to an object
 public class Item : MonoBehaviour
@@ -9,6 +10,7 @@ public class Item : MonoBehaviour
     public InteractionType type;
     [Header("Examine")]
     public string descriptionText;
+    public UnityEvent customEvent;
 
     public void Reset()
     {
@@ -25,7 +27,7 @@ public class Item : MonoBehaviour
 
             case InteractionType.PickUp:
                 // Add the object to the PickedUpItems list
-                FindObjectOfType<InteractionSystem>().PickUpItem(gameObject);   // Find object in a scene with a specific type
+                FindObjectOfType<InventorySystem>().PickUp(gameObject);   // Find object in a scene with a specific type
                 // Disable the object
                 gameObject.SetActive(false);                                    // Make game object inactive
                 break;
@@ -39,5 +41,8 @@ public class Item : MonoBehaviour
                 Debug.Log("NULL ITEM");
                 break;
         }
+
+        // Invoke (call) the custom event(s)
+        customEvent.Invoke();
     }
 }
