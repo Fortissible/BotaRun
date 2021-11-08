@@ -35,26 +35,31 @@ Clear all the quest and help [Char Name] to the finish spot in time. But be care
 **Main Menu**   : Press ESC to open main menu<br>
 
 ## Development Progress
-### Week 1
-Week 1 Goals :
+**Week 1** :
 * Create project story and goals -> Wildan, Jevon, Rian
 * First commit main project -> Wildan
 * Create basic script -> Wildan
 * Choosing template assets & create assets -> Rian
 
-### Week 2
-Week 2 Goals :
+**Week 2** :
 * Create movement script and logic -> Wildan, Jevon
 * Add collision logic -> Wildan
 * Customize camera POV -> Wildan, Jevon
 * Continue creating assets -> Rian
 
-### Week 3
-Week 3 Goals :
+**Week 3** :
 * Assets menus & title -> Rian
 * Assets character     -> Rian
 * Interaction script   -> Jevon
 * Dialogue system        -> Wildan
+
+**Week 4** :
+* Timer System -> Jevon
+* Fail State (Time Limit) -> Jevon 
+* Fail State (Trap, Fall) -> Wildan
+* Finish State -> Rian
+* Dialog interact radius -> Wildan
+* Main Menu, Char Assets continue -> Rian
 
 ## Assets
 Community asset that we used to make and create this project:
