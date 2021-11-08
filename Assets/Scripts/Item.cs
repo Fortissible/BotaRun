@@ -6,11 +6,12 @@ using UnityEngine.Events;
 [RequireComponent(typeof(BoxCollider2D))]                                       // RequireComponent - add component when the script is assigned to an object
 public class Item : MonoBehaviour
 {
-    public enum InteractionType { NONE, PickUp, Examine }                       // List of interaction type
+    public enum InteractionType { NONE, PickUp, Examine, Talk_or_Read}                       // List of interaction type
     public InteractionType type;
     [Header("Examine")]
     public string descriptionText;
     public UnityEvent customEvent;
+    public Dialog dialog;
 
     public void Reset()
     {
@@ -35,6 +36,11 @@ public class Item : MonoBehaviour
             case InteractionType.Examine:
                 // Call the Examine item in the interaction system
                 FindObjectOfType<InteractionSystem>().ExamineItem(this);
+                break;
+
+            case InteractionType.Talk_or_Read:
+                // Call the Examine item in the interaction system
+                FindObjectOfType<DialogueSystem>().StartDialog(dialog);
                 break;
 
             default:
