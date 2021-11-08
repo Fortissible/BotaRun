@@ -28,7 +28,8 @@ Clear all the quest and help [Char Name] to the finish spot in time. But be care
 ## How to play
 
 **Movement**    : Press A/D for move player into horizontal axis and W/S to climb up the stairs and crouch<br>
-**Interact**    : Press [key] for interact with object to clear the level<br>
+**Interact**    : Press E for interact with object to clear the level<br>
+**Inventory**   : Press B to open backpack<br>
 **Jump**        : Press Space for make the character jump<br>
 **Skip Chat**   : Click left mouse to skip the dialogue<br>
 **Main Menu**   : Press ESC to open main menu<br>
