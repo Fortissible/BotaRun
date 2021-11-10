@@ -1,0 +1,19 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine; 
+
+[System.Serializable] 
+public class Task
+{
+    public TaskGoals goal;
+    public bool isActive;
+
+    public string title;
+    public string desc;
+
+    public void Clear()
+    {
+        isActive = false;
+        Debug.Log(title + "is cleared!!");
+    }
+}

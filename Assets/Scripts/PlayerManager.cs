@@ -8,17 +8,24 @@ public class PlayerManager : MonoBehaviour
     public static bool isGameOver;
     public GameObject gameOverScreen;
 
+    public Task task;
+
+    public void doingTask()
+    {
+        if (task.isActive)
+        {
+            task.goal.ItemGathered();
+            if (task.goal.isReached())
+            {
+                task.Clear();
+            }
+        }
+    }
     private void Awake()
     {
         isGameOver = false;
     }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
     void Update()
     {
         if (isGameOver)
