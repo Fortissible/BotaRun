@@ -3723,7 +3723,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.0331054, y: -0.4417467, z: -10}
+  m_LocalPosition: {x: -2.033092, y: -0.4417467, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 378187958}
@@ -5840,19 +5840,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1074233646}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1205344152}
-        m_TargetAssemblyTypeName: PlayerManager, Assembly-CSharp
-        m_MethodName: GoTo_MainMenu
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1074233646
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6423,7 +6411,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameOverScreen: {fileID: 1930035301}
-  timer: {fileID: 2030566347}
   task:
     goal:
       taskTypes: 0
@@ -9670,7 +9657,6 @@ GameObject:
   - component: {fileID: 2030566351}
   - component: {fileID: 2030566350}
   - component: {fileID: 2030566349}
-  - component: {fileID: 2030566353}
   m_Layer: 5
   m_Name: Timer
   m_TagString: Untagged
@@ -9710,9 +9696,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textTimer: {fileID: 2030566351}
-  waktu: 10
+  waktu: 30
   gameIsActive: 1
-  animator: {fileID: 2030566353}
 --- !u!114 &2030566350
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9770,25 +9755,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2030566347}
   m_CullTransparentMesh: 1
---- !u!95 &2030566353
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2030566347}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 19180b516780cfa4093afac09f7eed70, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2054762504
 GameObject:
   m_ObjectHideFlags: 0

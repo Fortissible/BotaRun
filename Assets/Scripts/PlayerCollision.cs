@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PlayerCollision : MonoBehaviour
 {
-    public static bool timerAvailable = true;
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.transform.tag == "GameOver")
