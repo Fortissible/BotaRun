@@ -31,6 +31,8 @@ public class InventorySystem : MonoBehaviour
     public void PickUp(GameObject item)
     {
         items.Add(item);
+        Debug.Log("you picked up " + item.name);
+        FindObjectOfType<PlayerManager>().doingTask(item.name.ToString());
         Update_UI();
     }
 

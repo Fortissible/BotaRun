@@ -10,11 +10,11 @@ public class PlayerManager : MonoBehaviour
     public GameObject timer;
     public Task task;
 
-    public void doingTask()
+    public void doingTask(string item_name)
     {
         if (task.isActive)
         {
-            task.goal.ItemGathered();
+            task.goal.ItemGathered(item_name);
             if (task.goal.isReached())
             {
                 task.Clear();

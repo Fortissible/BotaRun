@@ -6,19 +6,21 @@ using UnityEngine;
 public class TaskGoals
 {
     public TaskTypes taskTypes;
-
     public int requiredAmount;
     public int currentAmount;
+    public string item_required;
 
     public bool isReached()
     {
         return (currentAmount >= requiredAmount);
     }
 
-    public void ItemGathered()
+    public void ItemGathered(string item_name)
     {
-        if (taskTypes == TaskTypes.Gathering)
+        if (taskTypes == TaskTypes.Gathering && item_required == item_name)
+        {
             currentAmount++;
+        }
     }
 
     public void ActivitiesCleared()
