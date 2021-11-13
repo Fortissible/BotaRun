@@ -3723,7 +3723,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.0331054, y: -0.4417467, z: -10}
+  m_LocalPosition: {x: -2.033092, y: -0.4417467, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 378187958}
@@ -9710,7 +9710,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textTimer: {fileID: 2030566351}
-  waktu: 10
+  waktu: 30
   gameIsActive: 1
   animator: {fileID: 2030566353}
 --- !u!114 &2030566350

@@ -40,7 +40,6 @@ public class TimerSettings : MonoBehaviour
             Debug.Log("Time's Up\nYou're late");
             gameIsActive = false;
             PlayerManager.isGameOver = true;
-            gameObject.SetActive(false);
         }
 
         SetText();
