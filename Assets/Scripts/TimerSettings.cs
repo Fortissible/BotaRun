@@ -8,6 +8,7 @@ public class TimerSettings : MonoBehaviour
     public Text textTimer;
     public float waktu = 100; //01.30
     public bool gameIsActive = true;
+    public Animator animator;
 
     void SetText()
     {
@@ -27,6 +28,11 @@ public class TimerSettings : MonoBehaviour
                 waktu--;
                 countdown = 0;
             }
+        }
+
+        if (gameIsActive && waktu < 15)
+        {
+            animator.SetBool("hurryUp", true);
         }
 
         if (gameIsActive && waktu == 0)
