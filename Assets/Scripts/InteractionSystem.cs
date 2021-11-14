@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class InteractionSystem : MonoBehaviour
 {
     [Header("Detection Parameters")]
+    public Animator animator;
     // Detection Point
     public Transform detectionPoint;
     // Detection Radius
@@ -26,10 +27,16 @@ public class InteractionSystem : MonoBehaviour
     {
         if (DetectObject())
         {
+            animator.SetBool("isThere_A_Task", true);
             if(InteractInput())
             {
+                animator.SetBool("isThere_A_Task", false);
                 detectedObject.GetComponent<Item>().Interact();                        // Once detect an object open Item script and call Interact
             }
+        }
+        else
+        {
+            animator.SetBool("isThere_A_Task", false);
         }
     }
 

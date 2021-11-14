@@ -68,6 +68,28 @@ Clear all the quest and help [Char Name] to the finish spot in time. But be care
 * InGame BGM -> Rian
 * Char Assets continue -> Rian
 
+
+## :toolbox: Technology Stack
+Tech-Stack used for this game :
+* Adobe Photoshop
+* Adobe Premiere
+* Unity 
+* Visual Studio
+
+## :wrench: Computer Graphic Technique 
+|Teknik                 |Deskripsi        | Contoh Illustrasi       |
+|-----------------------|-----------------|-------------------------|
+|Objek 2D               |                 |                         |
+|Objek 3D               |                 |                         |
+|Transformasi           |                 |                         |
+|Pencahayaan            |                 |                         |
+|Interaksi Mouse        | Button Click    |                         |
+|Interaksi Keyboard     | Move & Interact |                         |
+|Windowing              |                 |                         |
+|Perspektif             |                 |                         |
+|Fraktal                |                 |                         |
+|Tekstur                |                 |                         
+
 ## :bow: Assets
 Community asset that we used to make and create this project:
 * [Blackspire Medieval Pixel Art Asset](https://assetstore.unity.com/packages/2d/environments/medieval-pixel-art-asset-free-130131 "Medieval Pixel Art")
