@@ -6,11 +6,16 @@ using UnityEngine.Events;
 [RequireComponent(typeof(BoxCollider2D))]                                       // RequireComponent - add component when the script is assigned to an object
 public class Item : MonoBehaviour
 {
-    public enum InteractionType { NONE, PickUp, Examine, Talk_or_Read, Task}                       // List of interaction type
+    public enum InteractionType { NONE, PickUp, Examine, Talk_or_Read, Task}    // List of interaction type
+    public enum ItemType { Static, Consumable}    // List of item type
+    [Header("Attributes")]
     public InteractionType type;
+    public ItemType itemType;
     [Header("Examine")]
     public string descriptionText;
+    [Header("Custom Events")]
     public UnityEvent customEvent;
+    public UnityEvent consumeEvent;
     public Dialog dialog;
 
     public void Reset()
