@@ -5,9 +5,22 @@ using UnityEngine.UI;
 
 public class InventorySystem : MonoBehaviour
 {
+    [System.Serializable]
+    // Inventory item class
+    public class InventoryItem
+    {
+        public GameObject obj;
+        public int stack = 1;
+        public InventoryItem(GameObject o, int s = 1)
+        {
+            obj = o;
+            stack = s;
+        }
+
+    }
     [Header("General Fields")]
     // List of items picked up
-    public List<GameObject> items = new List<GameObject>();
+    public List<InventoryItem> items = new List<InventoryItem>();
     // Flag indicates if the inventory is open or not
     public bool isOpen;
     [Header("UI Items Section")]
@@ -31,11 +44,46 @@ public class InventorySystem : MonoBehaviour
     // Add item to the list
     public void PickUp(GameObject item)
     {
-        items.Add(item);
+        // If item is stackable
+        if (item.GetComponent<Item>().stackable)
+        {
+            // Check if we have an existing item in our inventory
+            InventoryItem existingItem = items.Find(x => x.obj.name == item.name);
+            // If so, stack it
+            if (existingItem != null)
+            {
+                existingItem.stack++;
+            }
+            // If no, add it as new item
+            else
+            {
+                InventoryItem i = new InventoryItem(item);
+                items.Add(i);
+            }
+        }
+        // If item is not stackable
+        else
+        {
+            InventoryItem i = new InventoryItem(item);
+            items.Add(i);
+        }
         Debug.Log("you picked up " + item.name);
         FindObjectOfType<PlayerManager>().doingTask(item.name.ToString());
         Update_UI();
     }
+
+    public bool CanPickUp()
+    {
+        if (items.Count >= items_images.Length)
+        {
+            return false;
+        }
+        else
+        {
+            return true;
+        }
+    }
+
 
     void ToggleInventory()
     {
@@ -53,7 +101,7 @@ public class InventorySystem : MonoBehaviour
         // Show it in the respective slot in the "items_images"
         for (int i = 0; i < items.Count; i++)
         {
-            items_images[i].sprite = items[i].GetComponent<SpriteRenderer>().sprite;
+            items_images[i].sprite = items[i].obj.GetComponent<SpriteRenderer>().sprite;
             items_images[i].gameObject.SetActive(true);
         }
     }
@@ -72,10 +120,15 @@ public class InventorySystem : MonoBehaviour
     {
         // Set the  image
         description_Image.sprite = items_images[id].sprite;
-        // Set the text
-        description_Title.text = items[id].name;
+        // Set the title
+        // If stack == 1 just write name
+        if (items[id].stack == 1)
+            description_Title.text = items[id].obj.name;
+        // If stack >= 1 write name + x value
+        else
+            description_Title.text = items[id].obj.name + " x" + items[id].stack;
         // Show the description
-        description_Text.text = items[id].GetComponent<Item>().descriptionText;
+        description_Text.text = items[id].obj.GetComponent<Item>().descriptionText;
         // Show the elements
         description_Image.gameObject.SetActive(true);
         description_Title.gameObject.SetActive(true);
@@ -90,15 +143,21 @@ public class InventorySystem : MonoBehaviour
     }
     public void Consume(int id)
     {
-        if (items[id].GetComponent<Item>().itemType == Item.ItemType.Consumable)
+        if (items[id].obj.GetComponent<Item>().itemType == Item.ItemType.Consumable)
         {
-            Debug.Log($"CONSUMED {items[id].name}");
+            Debug.Log($"CONSUMED {items[id].obj.name}");
             // Invoke the consume custom event 
-            items[id].GetComponent<Item>().consumeEvent.Invoke();
-            // Destroy the item in very little time
-            Destroy(items[id], 0.1f);
-            // Clear the item from the list
-            items.RemoveAt(id);
+            items[id].obj.GetComponent<Item>().consumeEvent.Invoke();
+            // Reduce the stack number
+            items[id].stack--;
+            // If the stack equals zerr
+            if (items[id].stack == 0)
+            {
+                // Destroy the item in very little time
+                Destroy(items[id].obj, 0.1f);
+                // Clear the item from the list
+                items.RemoveAt(id);
+            }
             // Update UI
             Update_UI();
         }

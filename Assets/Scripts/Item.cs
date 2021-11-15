@@ -11,6 +11,7 @@ public class Item : MonoBehaviour
     [Header("Attributes")]
     public InteractionType type;
     public ItemType itemType;
+    public bool stackable;  
     [Header("Examine")]
     public string descriptionText;
     [Header("Custom Events")]
@@ -32,6 +33,8 @@ public class Item : MonoBehaviour
                 break;
                 
             case InteractionType.PickUp:
+                if (!FindObjectOfType<InventorySystem>().CanPickUp())
+                    return;
                 // Add the object to the PickedUpItems list
                 FindObjectOfType<InventorySystem>().PickUp(gameObject);   // Find object in a scene with a specific type
                 // Disable the object
