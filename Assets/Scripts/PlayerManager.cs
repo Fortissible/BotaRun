@@ -17,6 +17,7 @@ public class PlayerManager : MonoBehaviour
             task.goal.ItemGathered(item_name);
             if (task.goal.isReached())
             {
+                FindObjectOfType<TaskManager>().taskListWindow.SetActive(false);
                 task.Clear();
             }
         }
