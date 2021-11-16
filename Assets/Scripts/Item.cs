@@ -6,11 +6,17 @@ using UnityEngine.Events;
 [RequireComponent(typeof(BoxCollider2D))]                                       // RequireComponent - add component when the script is assigned to an object
 public class Item : MonoBehaviour
 {
-    public enum InteractionType { NONE, PickUp, Examine, Talk_or_Read, Task}                       // List of interaction type
+    public enum InteractionType { NONE, PickUp, Examine, Talk_or_Read, Task, Finish}    // List of interaction type
+    public enum ItemType { Static, Consumable}    // List of item type
+    [Header("Attributes")]
     public InteractionType type;
+    public ItemType itemType;
+    public bool stackable;  
     [Header("Examine")]
     public string descriptionText;
+    [Header("Custom Events")]
     public UnityEvent customEvent;
+    public UnityEvent consumeEvent;
     public Dialog dialog;
 
     public void Reset()
@@ -27,6 +33,8 @@ public class Item : MonoBehaviour
                 break;
                 
             case InteractionType.PickUp:
+                if (!FindObjectOfType<InventorySystem>().CanPickUp())
+                    return;
                 // Add the object to the PickedUpItems list
                 FindObjectOfType<InventorySystem>().PickUp(gameObject);   // Find object in a scene with a specific type
                 // Disable the object
@@ -46,6 +54,18 @@ public class Item : MonoBehaviour
             case InteractionType.Task:
                 // Call the Examine item in the interaction system
                 FindObjectOfType<TaskManager>().OpenTaskWindow();
+                break;
+
+            case InteractionType.Finish:
+                if (FindObjectOfType<TaskManager>().task.isCleared == false)
+                {
+                    FindObjectOfType<InteractionSystem>().ExamineItem(this);
+                }
+
+                else
+                {
+                    FindObjectOfType<Finish>().OpenClearWindow();
+                }
                 break;
 
             default:
