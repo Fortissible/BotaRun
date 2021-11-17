@@ -9,6 +9,7 @@ public class PlayerCollision : MonoBehaviour
     {
         if (collision.transform.tag == "GameOver")
         {
+            FindObjectOfType<SoundManager>().Play("RobloxDeathSound");
             Debug.Log("You Died");
             PlayerManager.isGameOver = true;
             gameObject.SetActive(false);
