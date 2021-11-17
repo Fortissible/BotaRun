@@ -8,7 +8,6 @@ public class Finish : MonoBehaviour
     public void OpenClearWindow()
     {
         levelclearwindow.SetActive(true);
-    }
-
-        
+        FindObjectOfType<TimerSettings>().TimerFreeze(true);
+    }    
 }

@@ -21,6 +21,7 @@ public class DialogueSystem : MonoBehaviour
         animator.SetBool("IsOpen",true);
 
         Debug.Log("Start Convo : " + dialog.char_name);
+        FindObjectOfType<TimerSettings>().TimerFreeze(true);
 
         char_NameText.text = dialog.char_name;
 
@@ -61,6 +62,7 @@ public class DialogueSystem : MonoBehaviour
     void EndDialog()
     {
         animator.SetBool("IsOpen", false);
+        FindObjectOfType<TimerSettings>().TimerFreeze(false);
         Debug.Log("End Convo");
     }
 }

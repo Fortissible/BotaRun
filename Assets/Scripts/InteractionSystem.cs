@@ -79,6 +79,7 @@ public class InteractionSystem : MonoBehaviour
             examineWindow.SetActive(false);
             // Disable the boolean;
             isExamining = false;
+            FindObjectOfType<TimerSettings>().TimerFreeze(false);
         }
         else
         {
@@ -90,6 +91,7 @@ public class InteractionSystem : MonoBehaviour
             examineWindow.SetActive(true);
             // Enable the boolean;
             isExamining = true;
+            FindObjectOfType<TimerSettings>().TimerFreeze(true);
         }
     }
 }

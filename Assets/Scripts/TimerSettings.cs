@@ -8,6 +8,7 @@ public class TimerSettings : MonoBehaviour
     public Text textTimer;
     public float waktu = 100; //01.30
     public bool gameIsActive = true;
+    private bool isTimerFreeze = false;
     public Animator animator;
 
     void SetText()
@@ -18,12 +19,18 @@ public class TimerSettings : MonoBehaviour
     }
     float countdown;
 
+    public void TimerFreeze(bool state)
+    {
+        isTimerFreeze = state;
+    }
+
     private void Update()
     {
+
         countdown += Time.deltaTime;
         if (gameIsActive && PlayerManager.isGameOver == false)
         {
-            if (countdown >= 1)
+            if (countdown >= 1 && !isTimerFreeze)
             {
                 waktu--;
                 countdown = 0;
