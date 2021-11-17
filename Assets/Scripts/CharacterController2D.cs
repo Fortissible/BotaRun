@@ -13,6 +13,20 @@ public class CharacterController2D : MonoBehaviour
 	[SerializeField] private Collider2D m_CrouchDisableCollider;                // A collider that will be disabled when crouching
 	[SerializeField] private Rigidbody2D rigid_Body;
 
+	[Header("For WallSliding")]
+	[SerializeField] float wallSlideSpeed;
+	[SerializeField] LayerMask wallLayer;
+	[SerializeField] Transform wallCheckPoint;
+	[SerializeField] Vector2 wallCheckSize;
+	private bool isTouchingWall;
+	private bool isWallSliding;
+
+	[Header("For WallJumping")]
+	[SerializeField] float walljumpforce;
+	[SerializeField] Vector2 walljumpAngle;
+	[SerializeField] float walljumpDirection = -1;
+	public bool isJump = false;
+
 	private bool isLadder;
 	private bool isClimbing = false;
 	private float climbSpeed = 5f;
@@ -35,10 +49,15 @@ public class CharacterController2D : MonoBehaviour
 	public BoolEvent OnCrouchEvent;
 	private bool m_wasCrouching = false;
 
+	public void isJumpChange(bool jump_bool)
+    {
+		isJump = jump_bool;
+    }
+
 	private void Awake()
 	{
 		m_Rigidbody2D = GetComponent<Rigidbody2D>();
-
+		walljumpAngle.Normalize();
 		if (OnLandEvent == null)
 			OnLandEvent = new UnityEvent();
 
@@ -60,6 +79,7 @@ public class CharacterController2D : MonoBehaviour
 		// The player is grounded if a circlecast to the groundcheck position hits anything designated as ground
 		// This can be done using layers instead but Sample Assets will not overwrite your project settings.
 		Collider2D[] colliders = Physics2D.OverlapCircleAll(m_GroundCheck.position, k_GroundedRadius, m_WhatIsGround);
+		isTouchingWall = Physics2D.OverlapBox(wallCheckPoint.position, wallCheckSize, 0, wallLayer);
 		for (int i = 0; i < colliders.Length; i++)
 		{
 			if (colliders[i].gameObject != gameObject)
@@ -68,6 +88,18 @@ public class CharacterController2D : MonoBehaviour
 				if (!wasGrounded)
 					OnLandEvent.Invoke();
 			}
+		}
+
+		if (isTouchingWall && !m_Grounded && rigid_Body.velocity.y < 0) isWallSliding = true;
+		else isWallSliding = false;
+
+		if (isWallSliding) rigid_Body.velocity = new Vector2(rigid_Body.velocity.x, -wallSlideSpeed);
+
+		if (isWallSliding && isTouchingWall && isJump)
+		{
+			rigid_Body.AddForce(new Vector2(walljumpforce * walljumpAngle.x * walljumpDirection, walljumpforce * walljumpAngle.y), ForceMode2D.Impulse);
+			Flip();
+			isJump = false;
 		}
 
 		if (isClimbing)
@@ -86,6 +118,8 @@ public class CharacterController2D : MonoBehaviour
 		Gizmos.DrawSphere(m_GroundCheck.position, k_GroundedRadius);
 		Gizmos.color = Color.red;
 		Gizmos.DrawSphere(m_CeilingCheck.position, k_CeilingRadius);
+		Gizmos.color = Color.green;
+		Gizmos.DrawCube(wallCheckPoint.position, wallCheckSize);
 	}
 
 	public void Move(float move, bool crouch, bool jump)
@@ -177,7 +211,7 @@ public class CharacterController2D : MonoBehaviour
 	{
 		// Switch the way the player is labelled as facing.
 		m_FacingRight = !m_FacingRight;
-
+		walljumpDirection *= -1;
 		// Multiply the player's x local scale by -1.
 		Vector3 theScale = transform.localScale;
 		theScale.x *= -1;
