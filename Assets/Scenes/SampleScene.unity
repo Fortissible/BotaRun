@@ -14332,6 +14332,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 526275cc37241784dafde1627f08d564, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 1839675534}
   m_JumpForce: 250
   m_CrouchSpeed: 0.2
   m_MovementSmoothing: 0.1
@@ -14349,8 +14350,8 @@ MonoBehaviour:
     m_Bits: 512
   wallCheckPoint: {fileID: 1271704605}
   wallCheckSize: {x: 0.1, y: 1.2}
-  walljumpforce: 15
-  walljumpAngle: {x: 2, y: 1}
+  walljumpforce: 10
+  walljumpAngle: {x: 2, y: 2}
   walljumpDirection: -1
   isJump: 0
   OnLandEvent:
@@ -15405,6 +15406,68 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c13263f1f05170f4e849875cee5c46d0, type: 3}
+--- !u!1 &1982885154
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1982885156}
+  - component: {fileID: 1982885155}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1982885155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1982885154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fed1ae6a07f9074fbf8cb9d475d2a96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - clip: {fileID: 8300000, guid: bca064320b8a6794e9fc3c7e5ebaa12f, type: 3}
+    source: {fileID: 0}
+    name: RobloxDeathSound
+    volume: 1
+    pitch: 1
+    loop: 0
+  - clip: {fileID: 0}
+    source: {fileID: 0}
+    name: 
+    volume: 0
+    pitch: 0
+    loop: 0
+  - clip: {fileID: 0}
+    source: {fileID: 0}
+    name: 
+    volume: 0
+    pitch: 0
+    loop: 0
+--- !u!4 &1982885156
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1982885154}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -20.50938, y: 0.4153276, z: -6.1577725}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1998087011
 GameObject:
   m_ObjectHideFlags: 0
