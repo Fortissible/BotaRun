@@ -47,4 +47,9 @@ public class PlayerManager : MonoBehaviour
     {
         SceneManager.LoadScene("Main Menu");
     }
+
+    public void GoTo_NextLevel(string name)
+    {
+        FindObjectOfType<LoadLevel>().LevelLoader(name);
+    }
 }

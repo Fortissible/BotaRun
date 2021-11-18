@@ -106,7 +106,7 @@ public class CharacterController2D : MonoBehaviour
 
 		if (isWallSliding && isTouchingWall && isJump)
 		{
-			rigid_Body.AddForce(new Vector2(walljumpforce * walljumpAngle.x * walljumpDirection, walljumpforce * walljumpAngle.y), ForceMode2D.Impulse);
+			rigid_Body.AddForce(new Vector2(walljumpforce * (walljumpAngle.x*1.5f) * walljumpDirection, walljumpforce * walljumpAngle.y), ForceMode2D.Impulse);
 			Flip();
 			isJump = false;
 		}
