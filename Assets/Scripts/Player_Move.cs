@@ -70,6 +70,10 @@ public class Player_Move : MonoBehaviour
             can = false;
         if (FindObjectOfType<InventorySystem>().isOpen)
             can = false;
+        if (FindObjectOfType<TaskManager>().isReadTask)
+            can = false;
+        if (FindObjectOfType<DialogueSystem>().isDialogActive)
+            can = false;
         if (PlayerManager.isGameOver == true)
             can = false;
         return can;

@@ -6,6 +6,7 @@ using TMPro;
 public class TaskManager : MonoBehaviour
 {
     public Task task;
+    public bool isReadTask;
     public PlayerManager player;
     public GameObject taskWindow,taskListWindow;
     public TextMeshProUGUI titleText,taskListTitle;
@@ -15,6 +16,7 @@ public class TaskManager : MonoBehaviour
     {
         taskWindow.SetActive(true); 
         titleText.text = task.title;
+        isReadTask = true;
         taskListTitle.text = "- "+task.desc;
         descriptionText.text = task.desc;
         FindObjectOfType<TimerSettings>().TimerFreeze(true);
@@ -23,6 +25,7 @@ public class TaskManager : MonoBehaviour
     public void AcceptTask()
     {
         taskWindow.SetActive(false);
+        isReadTask = false;
         taskListWindow.SetActive(true);
         FindObjectOfType<TimerSettings>().TimerFreeze(false);
         task.isActive = true;

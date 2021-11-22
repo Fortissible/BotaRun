@@ -6,7 +6,7 @@ using UnityEngine.Events;
 [RequireComponent(typeof(BoxCollider2D))]                                       // RequireComponent - add component when the script is assigned to an object
 public class Item : MonoBehaviour
 {
-    public enum InteractionType { NONE, PickUp, Examine, Talk_or_Read, Task, Finish}    // List of interaction type
+    public enum InteractionType { NONE, PickUp, Examine, Talk_or_Read, Task, Finish, Do}    // List of interaction type
     public enum ItemType { Static, Consumable}    // List of item type
     [Header("Attributes")]
     public InteractionType type;
@@ -18,6 +18,8 @@ public class Item : MonoBehaviour
     public UnityEvent customEvent;
     public UnityEvent consumeEvent;
     public Dialog dialog;
+    public GameObject gate;
+    public Animator animator;
 
     public void Reset()
     {
@@ -54,6 +56,12 @@ public class Item : MonoBehaviour
             case InteractionType.Task:
                 // Call the Examine item in the interaction system
                 FindObjectOfType<TaskManager>().OpenTaskWindow();
+                break;
+
+            case InteractionType.Do:
+                // Call the Examine item in the interaction system
+                gate.SetActive(false);
+                animator.SetBool("isActive",true);
                 break;
 
             case InteractionType.Finish:

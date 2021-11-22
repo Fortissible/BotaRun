@@ -8,8 +8,9 @@ public class DialogueSystem : MonoBehaviour
     public Text char_NameText;
     public Text dialogText;
     public Animator animator;
+    public bool isDialogActive;
     private Queue<string> kalimat_kalimat;
-    
+
     void Start()
     {
         kalimat_kalimat = new Queue<string>();
@@ -19,7 +20,7 @@ public class DialogueSystem : MonoBehaviour
     {
 
         animator.SetBool("IsOpen",true);
-
+        isDialogActive = true;
         Debug.Log("Start Convo : " + dialog.char_name);
         FindObjectOfType<TimerSettings>().TimerFreeze(true);
 
@@ -62,6 +63,7 @@ public class DialogueSystem : MonoBehaviour
     void EndDialog()
     {
         animator.SetBool("IsOpen", false);
+        isDialogActive = false;
         FindObjectOfType<TimerSettings>().TimerFreeze(false);
         Debug.Log("End Convo");
     }
