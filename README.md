@@ -68,27 +68,35 @@ Clear all the quest and help [Char Name] to the finish spot in time. But be care
 * InGame BGM -> Rian
 * Char Assets continue -> Rian
 
+**Week 6-7** :
+* Lvl 1 (Daytime) -> Jevon
+* Lvl 2 (Nighttime) -> Rian
+* Lvl 3 (Snow Weather) -> Wildan
+* Pause function, animation fix -> Wildan
+
+**Week 7++** :
+* Ngelarin video, dokumentasi, paper, dll -> Jevon, Wildan, Rian
 
 ## :toolbox: Technology Stack
 Tech-Stack used for this game :
-* Adobe Photoshop
-* Adobe Premiere
+* Adobe Photoshop, Aseprite
+* Adobe Premiere, Audacity
 * Unity 
 * Visual Studio
 
 ## :wrench: Computer Graphic Technique 
-|Teknik                 |Deskripsi        | Contoh Illustrasi       |
-|-----------------------|-----------------|-------------------------|
-|Objek 2D               |                 |                         |
-|Objek 3D               |                 |                         |
-|Transformasi           |                 |                         |
-|Pencahayaan            |                 |                         |
-|Interaksi Mouse        | Button Click    |                         |
-|Interaksi Keyboard     | Move & Interact |                         |
-|Windowing              |                 |                         |
-|Perspektif             |                 |                         |
-|Fraktal                |                 |                         |
-|Tekstur                |                 |                         
+|Teknik                 |Deskripsi                | Contoh Illustrasi       |
+|-----------------------|-------------------------|-------------------------|
+|Objek 2D               | Char & other 2DObj        |                         |
+|Objek 3D               | **WIP**                   |                         |
+|Transformasi           | Translate,Scale,Rotate    |                         |
+|Pencahayaan            | Ambient, Diffuse          |                         |
+|Interaksi Mouse        | Button Click              |                         |
+|Interaksi Keyboard     | Move & Interact           |                         |
+|Windowing              | **WIP**                   |                         |
+|Perspektif             | 2D (Side-view Orthograpic)|                         |
+|Fraktal                | Snowflake Koch Fractal    |                         |
+|Tekstur                | **WIP**                   |                         |
 
 ## :bow: Assets
 Community asset that we used to make and create this project:
@@ -98,4 +106,11 @@ Community asset that we used to make and create this project:
 * [Ansimuz Sunny Land](https://assetstore.unity.com/packages/2d/characters/sunny-land-103349 "Sunnyland")
 
 Dont forget to checkout the Asset Creator, they are awesome!
+
+## Informasi Project
+| Informasi             | URL                     | 
+|-----------------------|-------------------------|
+| Video Demo            | **WIP**                 |                         
+| Figma                 | https://www.figma.com/file/86LoNW01SNvScHdzl1MGUJ/Gerafkom?node-id=0%3A1  |                         
+| Assets Original       | https://drive.google.com/drive/folders/1my3RrCeL7rTxeqr3D9VeC2sk0e4c5k3i  |                         
 
