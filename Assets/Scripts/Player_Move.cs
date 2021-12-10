@@ -74,6 +74,8 @@ public class Player_Move : MonoBehaviour
             can = false;
         if (FindObjectOfType<DialogueSystem>().isDialogActive)
             can = false;
+        if (FindObjectOfType<PlayerManager>().isPaused)
+            can = false;
         if (PlayerManager.isGameOver == true)
             can = false;
         return can;

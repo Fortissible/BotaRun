@@ -23,10 +23,11 @@ public class TaskGoals
         }
     }
 
-    public void ActivitiesCleared()
+    public void ActivitiesCleared(string item_name)
     {
-        if (taskTypes == TaskTypes.Activities)
+        if (taskTypes == TaskTypes.Activities && item_name == item_required){
             currentAmount++;
+        }
     }
 }
 

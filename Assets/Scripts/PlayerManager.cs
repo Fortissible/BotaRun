@@ -6,7 +6,8 @@ using UnityEngine.SceneManagement;
 public class PlayerManager : MonoBehaviour
 {
     public static bool isGameOver;
-    public GameObject gameOverScreen;
+    public bool isPaused;
+    public GameObject gameOverScreen,pauseWindow;
     public GameObject timer;
     public Task task;
 
@@ -15,6 +16,18 @@ public class PlayerManager : MonoBehaviour
         if (task.isActive)
         {
             task.goal.ItemGathered(item_name);
+            if (task.goal.isReached())
+            {
+                FindObjectOfType<TaskManager>().taskListWindow.SetActive(false);
+                task.Clear();
+            }
+        }
+    }
+    public void doingTaskActivities(string item_name)
+    {
+        if (task.isActive)
+        {
+            task.goal.ActivitiesCleared(item_name);
             if (task.goal.isReached())
             {
                 FindObjectOfType<TaskManager>().taskListWindow.SetActive(false);
@@ -37,8 +50,20 @@ public class PlayerManager : MonoBehaviour
             gameOverScreen.SetActive(true);
             timer.SetActive(false);
         }
+        if (Input.GetButtonDown("Cancel"))
+        {
+            pauseWindow.SetActive(true);
+            timer.SetActive(false);
+            isPaused = true;
+        }
     }
 
+    public void ContinueLevel()
+    {
+        pauseWindow.SetActive(false);
+        timer.SetActive(true);
+        isPaused = false;
+    }
     public void ReplayLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);

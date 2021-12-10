@@ -6,7 +6,8 @@ using UnityEngine.Events;
 [RequireComponent(typeof(BoxCollider2D))]                                       // RequireComponent - add component when the script is assigned to an object
 public class Item : MonoBehaviour
 {
-    public enum InteractionType { NONE, PickUp, Examine, Talk_or_Read, Task, Finish, Do}    // List of interaction type
+    public bool alsoTaskGiver;
+    public enum InteractionType { NONE, PickUp, Examine, Talk_or_Read, Task, Finish, Do, Activities}    // List of interaction type
     public enum ItemType { Static, Consumable}    // List of item type
     [Header("Attributes")]
     public InteractionType type;
@@ -14,6 +15,7 @@ public class Item : MonoBehaviour
     public bool stackable;  
     [Header("Examine")]
     public string descriptionText;
+    public bool isActive = true;
     [Header("Custom Events")]
     public UnityEvent customEvent;
     public UnityEvent consumeEvent;
@@ -27,6 +29,10 @@ public class Item : MonoBehaviour
         gameObject.layer = 6;                                                   // set game object layer to item layer
     }
 
+    public void dialogEndFunction()
+    {
+            FindObjectOfType<TaskManager>().OpenTaskWindow();
+    }
     public void Interact()
     {
         switch (type)
@@ -50,7 +56,7 @@ public class Item : MonoBehaviour
 
             case InteractionType.Talk_or_Read:
                 // Call the Examine item in the interaction system
-                FindObjectOfType<DialogueSystem>().StartDialog(dialog);
+                FindObjectOfType<DialogueSystem>().StartDialog(dialog,alsoTaskGiver);
                 break;
 
             case InteractionType.Task:
@@ -62,6 +68,11 @@ public class Item : MonoBehaviour
                 // Call the Examine item in the interaction system
                 gate.SetActive(false);
                 animator.SetBool("isActive",true);
+                break;
+            case InteractionType.Activities:
+                if (isActive)
+                    FindObjectOfType<InventorySystem>().ToggleInventory(true);
+                isActive = false;
                 break;
 
             case InteractionType.Finish:

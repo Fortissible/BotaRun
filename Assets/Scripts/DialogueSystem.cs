@@ -10,15 +10,16 @@ public class DialogueSystem : MonoBehaviour
     public Animator animator;
     public bool isDialogActive;
     private Queue<string> kalimat_kalimat;
+    private bool checkTaskGiver;
 
     void Start()
     {
         kalimat_kalimat = new Queue<string>();
     }
 
-    public void StartDialog(Dialog dialog)
+    public void StartDialog(Dialog dialog, bool alsoTaskGiver= false)
     {
-
+        checkTaskGiver = alsoTaskGiver;
         animator.SetBool("IsOpen",true);
         isDialogActive = true;
         Debug.Log("Start Convo : " + dialog.char_name);
@@ -41,6 +42,10 @@ public class DialogueSystem : MonoBehaviour
         if (kalimat_kalimat.Count == 0)
         {
             EndDialog();
+            Debug.Log(checkTaskGiver);
+            if (checkTaskGiver){ 
+            FindObjectOfType<Item>().dialogEndFunction();
+            }
             return;
         }
 

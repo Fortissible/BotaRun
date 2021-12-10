@@ -32,6 +32,7 @@ public class InventorySystem : MonoBehaviour
     public Image description_Image;
     public Text description_Title;
     public Text description_Text;
+    private bool activitiesCheck = false;
 
     private void Update()
     {
@@ -85,10 +86,11 @@ public class InventorySystem : MonoBehaviour
     }
 
 
-    void ToggleInventory()
+    public void ToggleInventory(bool checksTask = false)
     {
         isOpen = !isOpen;
-
+        Debug.Log(checksTask);
+        activitiesCheck = checksTask;
         ui_Window.SetActive(isOpen);
         Update_UI();
     }
@@ -146,6 +148,9 @@ public class InventorySystem : MonoBehaviour
         if (items[id].obj.GetComponent<Item>().itemType == Item.ItemType.Consumable)
         {
             Debug.Log($"CONSUMED {items[id].obj.name}");
+            if (activitiesCheck)
+                FindObjectOfType<PlayerManager>().doingTaskActivities(items[id].obj.name);
+            activitiesCheck = false;
             // Invoke the consume custom event 
             items[id].obj.GetComponent<Item>().consumeEvent.Invoke();
             // Reduce the stack number
