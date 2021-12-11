@@ -30,6 +30,7 @@ public class Player_Move : MonoBehaviour
 
         if (Input.GetButtonDown("Jump"))
         {
+            Debug.Log("You Jumped");
             jump_bool = true;
             FindObjectOfType<CharacterController2D>().isJumpChange(jump_bool);
             animator.SetBool("isJumping", true);

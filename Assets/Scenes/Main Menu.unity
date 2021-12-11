@@ -777,7 +777,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 640748508}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1210966891}
+        m_TargetAssemblyTypeName: LoadLevel, Assembly-CSharp
+        m_MethodName: LevelLoader
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: SampleScene 3
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &640748508
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -898,7 +910,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 657273534}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1210966891}
+        m_TargetAssemblyTypeName: LoadLevel, Assembly-CSharp
+        m_MethodName: LevelLoader
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: SampleScene 1
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &657273534
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2838,7 +2862,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1727684027
 MonoBehaviour:
   m_ObjectHideFlags: 0
