@@ -8155,11 +8155,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51581767fa763a24c8d5e84e6a4673b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  alsoTaskGiver: 0
   type: 1
   itemType: 1
   stackable: 1
   descriptionText: 
-  alsoTaskGiver: 0
+  isActive: 1
   customEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -8772,11 +8773,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51581767fa763a24c8d5e84e6a4673b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  alsoTaskGiver: 0
   type: 2
   itemType: 0
   stackable: 0
   descriptionText: ' Take water'
-  alsoTaskGiver: 0
+  isActive: 1
   customEvent:
     m_PersistentCalls:
       m_Calls:
@@ -8891,11 +8893,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51581767fa763a24c8d5e84e6a4673b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  alsoTaskGiver: 0
   type: 6
   itemType: 0
   stackable: 0
   descriptionText: 
-  alsoTaskGiver: 0
+  isActive: 1
   customEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -9108,11 +9111,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51581767fa763a24c8d5e84e6a4673b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  alsoTaskGiver: 0
   type: 3
   itemType: 0
   stackable: 0
   descriptionText: 
-  alsoTaskGiver: 0
+  isActive: 1
   customEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -9823,7 +9827,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -18.105112, y: -0.29674667, z: -10}
+  m_LocalPosition: {x: -18.1051, y: -0.29674667, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 378187958}
@@ -10964,11 +10968,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51581767fa763a24c8d5e84e6a4673b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  alsoTaskGiver: 0
   type: 3
   itemType: 0
   stackable: 0
   descriptionText: 
-  alsoTaskGiver: 0
+  isActive: 1
   customEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -12179,11 +12184,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51581767fa763a24c8d5e84e6a4673b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  alsoTaskGiver: 0
   type: 4
   itemType: 0
   stackable: 0
   descriptionText: 
-  alsoTaskGiver: 0
+  isActive: 1
   customEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -14432,11 +14438,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51581767fa763a24c8d5e84e6a4673b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  alsoTaskGiver: 0
   type: 1
   itemType: 1
   stackable: 1
   descriptionText: 
-  alsoTaskGiver: 0
+  isActive: 1
   customEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -15173,7 +15180,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 2
           m_FloatArgument: 0
-          m_StringArgument: SampleScene 1
+          m_StringArgument: Lvl 1
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1202742762
@@ -15712,11 +15719,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51581767fa763a24c8d5e84e6a4673b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  alsoTaskGiver: 0
   type: 3
   itemType: 0
   stackable: 0
   descriptionText: 
-  alsoTaskGiver: 0
+  isActive: 1
   customEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -16092,11 +16100,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51581767fa763a24c8d5e84e6a4673b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  alsoTaskGiver: 0
   type: 1
   itemType: 1
   stackable: 1
   descriptionText: 
-  alsoTaskGiver: 0
+  isActive: 1
   customEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -16421,11 +16430,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51581767fa763a24c8d5e84e6a4673b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  alsoTaskGiver: 0
   type: 1
   itemType: 0
   stackable: 0
   descriptionText: 
-  alsoTaskGiver: 0
+  isActive: 1
   customEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -18785,11 +18795,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51581767fa763a24c8d5e84e6a4673b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  alsoTaskGiver: 0
   type: 1
   itemType: 1
   stackable: 1
   descriptionText: 
-  alsoTaskGiver: 0
+  isActive: 1
   customEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -18930,11 +18941,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51581767fa763a24c8d5e84e6a4673b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  alsoTaskGiver: 0
   type: 1
   itemType: 1
   stackable: 1
   descriptionText: 
-  alsoTaskGiver: 0
+  isActive: 1
   customEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -19308,7 +19320,6 @@ GameObject:
   - component: {fileID: 1771701021}
   - component: {fileID: 1771701020}
   - component: {fileID: 1771701023}
-  - component: {fileID: 1771701022}
   m_Layer: 0
   m_Name: TaskGiver
   m_TagString: Untagged
@@ -19360,19 +19371,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1771701022
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1771701019}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf8e65e7c52852f41a15a61082f9bf6a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  levelclearwindow: {fileID: 0}
 --- !u!114 &1771701023
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19385,7 +19383,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf8e65e7c52852f41a15a61082f9bf6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelclearwindow: {fileID: 0}
+  levelclearwindow: {fileID: 1858227857}
 --- !u!1001 &1788631846
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22394,11 +22392,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51581767fa763a24c8d5e84e6a4673b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  alsoTaskGiver: 0
   type: 3
   itemType: 0
   stackable: 0
   descriptionText: 
-  alsoTaskGiver: 0
+  isActive: 1
   customEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -22591,11 +22590,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51581767fa763a24c8d5e84e6a4673b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  alsoTaskGiver: 0
   type: 5
   itemType: 0
   stackable: 0
   descriptionText: You need to complete all the tasks
-  alsoTaskGiver: 0
+  isActive: 1
   customEvent:
     m_PersistentCalls:
       m_Calls: []
