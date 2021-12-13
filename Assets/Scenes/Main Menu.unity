@@ -5164,7 +5164,7 @@ GameObject:
   - component: {fileID: 2060091065}
   - component: {fileID: 2060091064}
   m_Layer: 0
-  m_Name: GameObject (1)
+  m_Name: fractals
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5190,8 +5190,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e115b1c579c832e458112c98c8c5afa8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  material: {fileID: 0}
-  maxChild: 2
+  material: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  maxChild: 3
   childSize: 0.5
 --- !u!4 &2060091066
 Transform:
@@ -5201,8 +5201,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2060091063}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 113.75101, y: 108.15002, z: -17.331264}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 117.03, y: 105.56, z: 60.8}
+  m_LocalScale: {x: 2.5, y: 2.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4

@@ -45,9 +45,9 @@ public class MeshGenerator : MonoBehaviour
 
         if (child < maxChild)
         {
-            new GameObject("Fractal Child").AddComponent<MeshGenerator>().CreateMinus(this, new Vector2(1.5f,0f));
-            new GameObject("Fractal Child").AddComponent<MeshGenerator>().CreateMinus(this, new Vector2(0.5f,0.86f));
-            new GameObject("Fractal Child").AddComponent<MeshGenerator>().CreateMinus(this, new Vector2(1.5f, 0.86f));
+            new GameObject("Fractal Child").AddComponent<MeshGenerator>().CreateMinus(this, new Vector2(1f,0.20f));
+            new GameObject("Fractal Child").AddComponent<MeshGenerator>().CreateMinus(this, new Vector2(0.65f,0.8f));
+            new GameObject("Fractal Child").AddComponent<MeshGenerator>().CreateMinus(this, new Vector2(1.35f, 0.8f));
             //new GameObject("Fractal Child").AddComponent<MeshGenerator>().CreatePlus(this, new Vector2(0.86f, 0f));
             //new GameObject("Fractal Child").AddComponent<MeshGenerator>().CreatePlus(this, new Vector2(0f, 0f));
            // new GameObject("Fractal Child").AddComponent<MeshGenerator>().CreatePlus(this, new Vector2(0.43f, 0.75f));
